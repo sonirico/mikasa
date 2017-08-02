@@ -2,12 +2,11 @@ var Twitter = require('twitter');
 var config = require('./config.js');
 var data = require('fs').readFileSync('mikasa.gif');
 
-
 var client = new Twitter({
-    consumer_key: config.consumer_key,
-    consumer_secret: config.consumer_secret,
-    access_token_key: config.access_token,
-    access_token_secret: config.access_secret
+    consumer_key: process.env.CONSUMER_KEY,
+    consumer_secret: process.env.CONSUMER_SECRET,
+    access_token_key: process.env.ACCESS_TOKEN,
+    access_token_secret: process.env.ACCESS_SECRET
 });
 
 /**
@@ -15,7 +14,6 @@ var client = new Twitter({
  * number of tweets per second depends on topic popularity
  */
 var tracks = "mikasa,#mikasa";
-
 
 client.stream('statuses/filter', { track: tracks }, function (stream) {
     console.log('Listening streaming ...');
