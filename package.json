@@ -1,7 +1,7 @@
 {
   "name": "mikasaBot",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Will remind not to buy certain brands of balls",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",
@@ -10,6 +10,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sonirico/mikasa/"
+  },
+  "dependencies": {
+    "twitter": "1.7.1"
   },
   "keywords": [
     "mikasa",
